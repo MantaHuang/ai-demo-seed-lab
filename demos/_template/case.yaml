@@ -1,0 +1,15 @@
+id: T-000
+slug: demo-slug
+title: Demo Name
+owner: user
+status_issue: ""
+goal: ""
+target_user: ""
+scope:
+  in: []
+  out: []
+acceptance: []
+approval:
+  approved_by: ""
+  approved_at: ""
+  spec_revision: 0

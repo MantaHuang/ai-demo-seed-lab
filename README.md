@@ -25,6 +25,8 @@ MVP 之前的协作基建阶段。
 4. 关键判断写入 GitHub Issue 或文档，避免只存在聊天记录里。
 5. 所有可运行成果进入 `demos/`，所有平台级能力进入后续 `platform/`。
 
+每个 Demo 同时保留两类事实：GitHub Issue label 记录“走到哪一步”，`generated/effective-spec.md` 记录“当前批准做什么”。聊天用于讨论，仓库文件用于交接和追溯。
+
 ## 推荐远端仓库名
 
 建议新建 GitHub 仓库：

@@ -24,6 +24,9 @@
 - [ ] README 写明运行方式
 - [ ] Demo Card 已补齐
 - [ ] 已知限制已记录
+- [ ] `generated/effective-spec.md` 已获用户批准
+- [ ] `handoff/implementation.md` 已记录实现和验证
+- [ ] `handoff/review.md` 已完成只读验收
 
 ## Known Limits
 

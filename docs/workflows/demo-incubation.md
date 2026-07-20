@@ -6,9 +6,9 @@
 Idea -> Qualified -> Planned -> Building -> Review -> Showcase -> Archived
 ```
 
-## 唯一事实源
+## 两类事实源
 
-Demo 状态以 GitHub Issue label 为准。
+Demo 状态以 GitHub Issue label 为准；当前批准的实现需求以该 Demo 的 `generated/effective-spec.md` 为准。两者职责不同，不互相覆盖。
 
 `demo-card.md` 中的 Status 字段只作为展示快照，方便平台页面读取和人工浏览；如果它与 Issue label 不一致，以 Issue label 为准。
 
@@ -88,22 +88,43 @@ demos/demo-slug/
   README.md
   demo-card.md
   brief.md
+  case.yaml
+  generated/
+    effective-spec.md
+  handoff/
+    implementation.md
+    modifications.md
+    review.md
   src/
   assets/
   tests/
 ```
 
-## Agent 流程
+## 八步协作闭环
+
+1. **调研规划**：Claude 起草 `brief.md`、`case.yaml` 和 `generated/effective-spec.md`；Codex 只做可实现性挑战。
+2. **人工批准**：用户确认目标、范围和验收标准；Codex 在 Issue 留下批准记录并切换到 `status:planned`。
+3. **Codex 开发**：Codex 只按已批准规格实现、测试，并写 `handoff/implementation.md`。
+4. **用户反馈**：用户看 Demo 后提出修改；Codex 先写入 `handoff/modifications.md`，不直接把新想法视为有效需求。
+5. **规格更新**：如反馈改变需求，Claude 更新 `effective-spec.md`，用户重新批准；纯缺陷修复无需改规格。
+6. **Claude 只读验收**：Claude 不改代码，只按有效规格检查一致性、完整性和体验，并给出验收意见。
+7. **Codex 修复与复验**：Codex 修复并补充修改记录，Claude 再次只读复验；结果写入 `handoff/review.md`。
+8. **最终通过**：用户确认展示或归档，Codex 更新 Issue label、Demo Card 和必要的决策记录。
+
+## 文件写入边界
 
 ### Claude Code
 
-在 `brief.md` 中补充：
+在规划阶段起草：
 
 - 用户场景
 - 价值主张
 - 产品流程
 - MVP 建议
 - 风险问题
+- 当前有效规格
+
+Review 阶段只读代码，不直接修复。
 
 ### Codex
 
@@ -114,6 +135,9 @@ demos/demo-slug/
 - 文件结构
 - 验证结果
 - 已知限制
+- 实现、验证和修改记录
+
+Codex 不得自行改写已批准需求。
 
 ### Cross Review
 
@@ -126,10 +150,10 @@ demos/demo-slug/
 
 ## MVP 直通道
 
-第一个真实 Demo 不必完整执行所有门禁。为了优先压测协作闭环，可以使用直通道：
+第一个真实 Demo 可以压缩状态流转，但不能省略人工批准、有效规格和只读验收：
 
 ```text
-Idea Issue -> Claude brief -> Codex build -> 一次交叉审查 -> Demo Card
+Idea Issue -> Claude spec -> 用户批准 -> Codex build -> Claude 只读验收 -> Demo Card
 ```
 
 从第二或第三个 Demo 开始，再严格使用完整状态机。

@@ -65,3 +65,27 @@ Issue label 最适合承担任务流转和协作状态，且可以直接服务 G
 Impact:
 
 每次状态变化都应更新 Issue label，并在必要时同步 Demo Card。
+
+## 2026-07-21 - 状态事实与需求事实分层管理
+
+Decision:
+
+GitHub Issue label 是 Demo 流转状态的唯一事实源；每个 Demo 的 `generated/effective-spec.md` 是当前批准实现需求的唯一事实源。
+
+Context:
+
+参考协作案例使用 `case.yaml`、有效规格和 handoff 文件保存执行证据。仓库原有 Issue 状态机适合平台治理，但缺少单个 Demo 的需求与返修证据链。
+
+Options Considered:
+
+- 全部以 GitHub Issue 为准。
+- 全部以仓库文件为准。
+- 状态与需求分别使用最合适的事实源。
+
+Why:
+
+状态回答“走到哪一步”，有效规格回答“批准做什么”。分层后既能服务 GitHub 看板，也能防止两个 agent 根据不同聊天记录实现。
+
+Impact:
+
+每个 Demo 新增 `case.yaml`、`generated/effective-spec.md` 和 `handoff/` 证据链。Claude 负责需求规格和只读验收，Codex 负责实现、记录、提交和状态维护。

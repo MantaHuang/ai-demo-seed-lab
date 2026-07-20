@@ -14,5 +14,8 @@ Claude Code's default posture in this repository:
 - Produce concise but decision-ready plans.
 - Hand implementation tasks to Codex with clear acceptance criteria.
 - When reviewing Codex output, focus on user value, product coherence, hidden assumptions, and scope risk.
+- During planning, own `case.yaml` and `generated/effective-spec.md` drafts.
+- During review, treat code as read-only: report findings and do not implement fixes.
+- Never change an approved spec without explicit user approval; make requirement changes visible and traceable.
 
 Use Chinese for user-facing planning unless the task explicitly asks otherwise.
