@@ -1,0 +1,51 @@
+- name: demo-idea
+  color: "1f883d"
+  description: New AI Demo idea awaiting qualification.
+
+- name: build
+  color: "0969da"
+  description: Engineering implementation task.
+
+- name: product
+  color: "fbca04"
+  description: Product strategy, UX, narrative, or requirements work.
+
+- name: review
+  color: "8250df"
+  description: Needs Claude/Codex cross review.
+
+- name: status:idea
+  color: "d0d7de"
+  description: Idea captured, not yet qualified.
+
+- name: status:qualified
+  color: "a2eeef"
+  description: Worth exploring further.
+
+- name: status:planned
+  color: "c5def5"
+  description: Has product and engineering plan.
+
+- name: status:building
+  color: "fbca04"
+  description: Currently being implemented.
+
+- name: status:review
+  color: "d4c5f9"
+  description: Awaiting cross review.
+
+- name: status:showcase
+  color: "0e8a16"
+  description: Ready to show.
+
+- name: status:archived
+  color: "b60205"
+  description: Paused, completed, or abandoned.
+
+- name: agent:claude
+  color: "f9d0c4"
+  description: Claude Code should advise or review.
+
+- name: agent:codex
+  color: "bfdadc"
+  description: Codex should implement, verify, or maintain repo state.
