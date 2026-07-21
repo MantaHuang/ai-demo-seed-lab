@@ -1,0 +1,22 @@
+{
+  "name": "t-001-demo-incubator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prebuild": "node scripts/build-data.mjs",
+    "build": "eleventy",
+    "dev": "eleventy --serve",
+    "test:unit": "node --test --test-isolation=none tests/unit/*.test.mjs",
+    "test:e2e": "playwright test",
+    "test": "npm run build && npm run test:unit && npm run test:e2e"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "nunjucks": "^3.2.4",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.1"
+  }
+}

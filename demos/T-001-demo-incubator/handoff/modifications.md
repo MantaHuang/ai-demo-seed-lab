@@ -15,6 +15,19 @@
 
 ## YYYY-MM-DD HH:MM - Change Title
 
+## 2026-07-21 - Phase 1 工程实现与验收自动化
+
+- Requested by: Manta（批准 Spec Revision 1 后开工）
+- Type: Technical
+- Reason: 将已批准规格落为可部署、可验证的第一阶段产品。
+- Spec revision before: 1
+- Spec revision after: 1（无需求变更）
+- Changes: Eleventy 作品墙、灵感生成器、case.yaml 数据构建、GoatCounter 渐进增强、GitHub Pages Actions、Node/Playwright S1-S9 验收；模板补充 `author/status/links/origin_idea`。
+- Impact: 新增 Phase 1 可运行站点和独立依赖；未实现任何 Out of Scope 内容。
+- Verification: 构建与单元测试通过；S1-S9 自动测试通过；桌面与移动端截图人工检查通过；三网访问与陌生访客演示待部署后人工完成。
+
+## YYYY-MM-DD HH:MM - Change Title
+
 - Requested by:
 - Type: Requirement | Defect | UX | Technical
 - Reason:

@@ -3,6 +3,7 @@ slug: demo-slug
 title: Demo Name
 owner: user
 author: ""
+status: idea
 status_issue: ""
 links:
   repo: ""

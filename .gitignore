@@ -16,6 +16,12 @@ build/
 .next/
 out/
 coverage/
+_site/
+demos/*/src/_data/catalog.json
+demos/*/src/_data/ideas.json
+artifacts/
+test-results/
+playwright-report/
 
 # Logs
 *.log

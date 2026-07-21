@@ -1,0 +1,101 @@
+---
+title: AI Demo 展示与孵化
+---
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="浏览社区 AI Demo，或摇出一个可以立刻动手的项目起点。">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ 'assets/site.css' | assetUrl }}">
+</head>
+<body data-base-path="{{ site.pathPrefix }}" data-goatcounter-code="{{ site.goatcounterCode }}">
+  <header class="topbar">
+    <a class="brand" href="{{ '' | assetUrl }}" aria-label="AI Demo Seed Lab 首页">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <span>AI Demo Seed Lab</span>
+    </a>
+    <nav aria-label="页面导航">
+      <a href="#showcase">作品</a>
+      <a href="#generator">摇一摇</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">项目从一个具体起点开始</p>
+        <h1 id="page-title">AI Demo 展示与孵化</h1>
+        <p class="lede">看看大家做出了什么，或者领走一个今天就能开工的 idea。</p>
+      </div>
+      <a class="generator-entry" href="#generator" data-event="generator-open">
+        <span aria-hidden="true">↝</span>
+        <span><strong>摇一摇灵感</strong><small>方向 × 人群 × 形态</small></span>
+      </a>
+    </section>
+
+    <section id="showcase" class="showcase" aria-labelledby="showcase-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-index">01 / SHOWCASE</p>
+          <h2 id="showcase-title">作品墙</h2>
+        </div>
+        <span class="count">{{ catalog | length }} 个项目</span>
+      </div>
+
+      <div class="demo-grid" data-demo-grid>
+        {% for demo in catalog %}
+        {% include "demo-card.njk" %}
+        {% else %}
+        <p class="empty-state">还没有作品，先从一个 idea 开始。</p>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="generator" class="generator" aria-labelledby="generator-title" data-generator data-ideas-url="{{ 'ideas.json' | assetUrl }}">
+      <div class="generator-copy">
+        <p class="section-index">02 / IDEA GENERATOR</p>
+        <h2 id="generator-title">摇出一个项目起点</h2>
+        <p>选择方向，或把决定交给随机。每个组合都有稳定编号，方便以后把灵感和作品连起来。</p>
+      </div>
+
+      <div class="generator-tool">
+        <div class="generator-controls">
+          <label for="direction">方向</label>
+          <select id="direction" data-direction>
+            <option value="">全随机</option>
+          </select>
+          <button type="button" class="primary-button" data-shake disabled>摇一摇</button>
+        </div>
+
+        <div class="idea-result" data-result hidden aria-live="polite">
+          <div class="idea-id" data-idea-id></div>
+          <dl>
+            <div><dt>方向</dt><dd data-field="direction"></dd></div>
+            <div><dt>人群</dt><dd data-field="audience"></dd></div>
+            <div><dt>形态</dt><dd data-field="form"></dd></div>
+          </dl>
+          <div class="idea-sentence">
+            <span>一句话点子</span>
+            <p data-field="sentence"></p>
+          </div>
+          <div class="idea-hints" data-hints></div>
+          <div class="result-actions">
+            <button type="button" class="secondary-button" data-reshake>重摇</button>
+            <button type="button" class="primary-button" data-copy>复制</button>
+          </div>
+          <textarea class="copy-fallback" data-copy-fallback aria-label="可手动复制的 idea 文本" readonly hidden></textarea>
+          <p class="copy-status" data-copy-status role="status"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>仓库即数据库</span>
+    <a href="https://github.com/MantaHuang/ai-demo-seed-lab" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </footer>
+  <script type="module" src="{{ 'assets/app.js' | assetUrl }}"></script>
+</body>
+</html>
