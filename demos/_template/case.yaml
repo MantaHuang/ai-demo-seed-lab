@@ -2,7 +2,13 @@ id: T-000
 slug: demo-slug
 title: Demo Name
 owner: user
+author: ""
 status_issue: ""
+links:
+  repo: ""
+  demo: ""
+  issue: ""
+origin_idea: ""
 goal: ""
 target_user: ""
 scope:

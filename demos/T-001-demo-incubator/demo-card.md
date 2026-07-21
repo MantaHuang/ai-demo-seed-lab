@@ -28,7 +28,7 @@ AI DEMO 孵化平台
 
 ## Status
 
-Planned
+Building
 
 Note: GitHub Issue label is the source of truth. This field is a display snapshot.
 
@@ -36,4 +36,4 @@ Note: GitHub Issue label is the source of truth. This field is a display snapsho
 
 - Repo: https://github.com/MantaHuang/ai-demo-seed-lab
 - Demo:
-- Issue:
+- Issue: https://github.com/MantaHuang/ai-demo-seed-lab/issues/1

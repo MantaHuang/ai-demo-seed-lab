@@ -9,8 +9,8 @@
 - Revision: 1
 - 修订原因: Codex 复核指出 5 处数据/验收契约未闭合；用户拍板：词库按现状批准 / GoatCounter 渐进统计 / 先 GitHub Pages / 机器字段集中到 case.yaml
 - Approved by: Manta（用户）
-- Approved at: 2026-07-21（会话内批准；GitHub Issue 建立后补记 `/approve`）
-- Related Issue: 待建（Codex 建立后回填）
+- Approved at: 2026-07-21（批准记录见 GitHub Issue #1）
+- Related Issue: [#1](https://github.com/MantaHuang/ai-demo-seed-lab/issues/1)
 - 上一版: Revision 0，Approved by Manta，2026-07-21
 
 ## One-Sentence Concept
