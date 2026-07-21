@@ -28,7 +28,7 @@ AI DEMO 孵化平台
 
 ## Status
 
-Building
+Review
 
 Note: GitHub Issue label is the source of truth. This field is a display snapshot.
 
