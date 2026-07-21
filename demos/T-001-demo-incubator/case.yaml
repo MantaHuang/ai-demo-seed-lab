@@ -1,0 +1,32 @@
+id: T-001
+slug: demo-incubator
+title: AI DEMO 孵化平台
+owner: user
+author: "Manta"
+status_issue: ""
+links:
+  repo: "https://github.com/MantaHuang/ai-demo-seed-lab"
+  demo: ""
+  issue: ""
+goal: "项目全周期管理平台：领灵感、立项、推进度、被看见、收反馈；第一版先做周期的头尾两端——灵感生成器（入口）和作品展示墙（出口），以 origin_idea 打通数据链路。"
+target_user: "共学学员与社区创作者（主）；导师与访客（次）"
+scope:
+  in:
+    - "Demo 作品墙：case.yaml 为唯一机器数据源，构建时归一化为统一卡片模型并输出 demos.json"
+    - "灵感生成器：按赛道 x 人群 x AI 形态组合摇出 idea 卡（稳定编号 + 固定句模板），可重摇、可复制"
+    - "origin_idea 数据链路：作品卡片展示源自灵感标记"
+    - "GoatCounter 轻量统计（访问量 + 关键事件，仪表盘仅站点所有者可见）"
+    - "GitHub Pages 静态部署，移动端可用"
+  out:
+    - "账号体系与登录"
+    - "评论、点赞、互评"
+    - "作品上传与在线试用沙箱"
+    - "通知与督促机制（Phase 2）"
+    - "停留时长等会话级统计"
+    - "sola 平台联动（Phase 4 数据管道合作，需先与对方达成共识）"
+acceptance:
+  - "以 generated/effective-spec.md（当前批准修订版）的 Scenario Acceptance Tests S1-S9 与 Acceptance Criteria 为准，不在此重复维护"
+approval:
+  approved_by: "Manta（用户，会话内批准；Issue 建立后补记 /approve）"
+  approved_at: "2026-07-21"
+  spec_revision: 1

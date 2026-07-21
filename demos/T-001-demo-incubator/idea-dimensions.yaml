@@ -1,0 +1,78 @@
+# 摇一摇灵感生成器 · 维度池（已批准）
+# 批准：Manta，2026-07-21，随 Spec Revision 1 生效。
+# Codex 只做格式转换，不改任何文案。后续词库更新为纯数据改动，无需修改规格。
+# 规则（见 effective-spec「Idea 编号与词库规则」）：
+#   - slug 仅 [a-z0-9]+，维度内唯一，发布后不改名、不复用；弃用加 deprecated: true
+#   - ID = IDEA-{directionSlug}-{audienceSlug}-{formSlug}
+#   - 修改 name/hint 文案不改变 ID 语义
+
+idea_template: "为「{audience.name}」做一个「{form.name}」，帮 TA 在「{direction.name}」场景里拿到一个具体的结果。"
+
+directions: # 方向（借鉴 sola 7 赛道，slug 用于编号）
+  - slug: offwork
+    name: 紧急下班
+    hint: 把一件每周重复的活儿交给 Agent 自动跑
+  - slug: distill
+    name: 蒸馏
+    hint: 把你的方法论/框架写进 Agent，让它按你的方式工作
+  - slug: product
+    name: 产品
+    hint: 带一个真实业务问题，做出能交付结果的 MVP
+  - slug: playground
+    name: 游乐园
+    hint: 做一个别人真的能走进去玩的世界
+  - slug: content
+    name: 内容创作
+    hint: 把素材、灵感连成越用越懂你的内容系统
+  - slug: lifeos
+    name: LifeOS
+    hint: 让目标、习惯、关系进入可追踪可复盘的系统
+  - slug: teen
+    name: 青少年创造
+    hint: 把一个念头做成能打开、能操作、能展示的原型
+
+audiences: # 目标人群（谁的问题）
+  - slug: self
+    name: 自己
+    hint: 你每天真实遇到的麻烦，最诚实的需求
+  - slug: coach
+    name: 咨询师/教练/老师
+    hint: 有成熟方法论、需要规模化服务的人
+  - slug: creator
+    name: 创作者/自媒体
+    hint: 被选题、素材、数据分析拖住的人
+  - slug: family
+    name: 家人/朋友
+    hint: 身边具体的一个人，需求看得见摸得着
+  - slug: community
+    name: 共学社区
+    hint: 学员同伴们的共同痛点
+  - slug: smallbiz
+    name: 小生意主
+    hint: 一人公司/小店，流程杂、预算少
+  - slug: kids
+    name: 孩子/学生
+    hint: 学习、暑假项目、校园场景
+
+forms: # AI 形态（做成什么样）
+  - slug: workflow
+    name: 自动化工作流
+    hint: 定时跑、自动出结果，人只做验收
+  - slug: companion
+    name: 陪伴型 Agent
+    hint: 有记忆、持续对话、越用越懂你
+  - slug: tool
+    name: 单页小工具
+    hint: 打开即用，一个输入一个输出
+  - slug: game
+    name: 可玩交互/游戏
+    hint: 能走进去玩的小世界
+  - slug: kb
+    name: 知识库+问答
+    hint: 把散落的知识收进来，随问随答
+  - slug: report
+    name: 自动报告生成器
+    hint: 数据进去，一页纸结论出来
+  - slug: sim
+    name: 模拟器/训练器
+    hint: 练习真实流程的安全沙盘
