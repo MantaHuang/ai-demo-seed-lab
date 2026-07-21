@@ -7,7 +7,7 @@ status: review
 status_issue: "#1"
 links:
   repo: "https://github.com/MantaHuang/ai-demo-seed-lab"
-  demo: ""
+  demo: "https://mantahuang.github.io/ai-demo-seed-lab/"
   issue: "https://github.com/MantaHuang/ai-demo-seed-lab/issues/1"
 goal: "项目全周期管理平台：领灵感、立项、推进度、被看见、收反馈；第一版先做周期的头尾两端——灵感生成器（入口）和作品展示墙（出口），以 origin_idea 打通数据链路。"
 target_user: "共学学员与社区创作者（主）；导师与访客（次）"

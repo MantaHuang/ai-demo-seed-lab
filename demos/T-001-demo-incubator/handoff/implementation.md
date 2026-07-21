@@ -34,6 +34,8 @@ Phase 1 已按 Revision 1 实现：
 
 ## How to Run
 
+Published demo: https://mantahuang.github.io/ai-demo-seed-lab/
+
 ```bash
 npm install
 npm run dev

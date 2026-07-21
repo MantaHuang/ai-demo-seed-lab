@@ -35,5 +35,5 @@ Note: GitHub Issue label is the source of truth. This field is a display snapsho
 ## Links
 
 - Repo: https://github.com/MantaHuang/ai-demo-seed-lab
-- Demo:
+- Demo: https://mantahuang.github.io/ai-demo-seed-lab/
 - Issue: https://github.com/MantaHuang/ai-demo-seed-lab/issues/1
