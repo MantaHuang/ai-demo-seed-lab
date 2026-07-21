@@ -46,7 +46,7 @@ npm run dev
 - `npm run build`：通过；生成 `index.html`、`demos.json`、`ideas.json` 与静态资源。
 - `npm run test:unit`：4/4 通过。
 - Playwright 浏览器验收：S1、S2、S3、S4、S7、S8 分批运行，全部通过。
-- 视觉 QA：Playwright 生成桌面与 375×667 全页截图，人工检查无重叠、横向溢出或孤字标题。
+- 视觉 QA：Playwright 生成桌面与 375×667 全页截图；Claude 验收发现并由 Codex 修复桌面 generator 约 8px 横向溢出。修复后 Chromium 检查 `clientWidth=scrollWidth=1280`，generator 边界位于 `8..1272`。
 
 ### S1-S9
 
@@ -66,6 +66,7 @@ npm run dev
 
 | 检查 | 结果 | 说明 |
 | --- | --- | --- |
+| 中国大陆手机网络访问站点 | 通过 | 2026-07-22 Manta 手机网络实测可正常打开站点；本次未记录具体运营商。 |
 | 陌生访客 10 分钟演示 | 待人工完成 | 需要 Manta 或 Claude 验收阶段找观察者记录用时与结论。 |
 | 中国移动访问站点 / GoatCounter | 待三网实测 | 当前机器无法证明运营商链路；部署后用移动网络访问并记录。 |
 | 中国联通访问站点 / GoatCounter | 待三网实测 | 当前机器无法证明运营商链路；部署后用联通网络访问并记录。 |
@@ -75,5 +76,5 @@ npm run dev
 
 - Phase 1 只有仓库提交上墙，无站内上传。
 - GoatCounter code 未配置时不采集统计；统计脚本失败不影响核心功能。
-- GitHub Pages 在中国大陆的运营商可达性尚待三网人工实测。
+- GitHub Pages 已通过一次中国大陆手机网络访问实测；移动、联通、电信分运营商结果仍待补齐。
 - 未实现有效规格 Out of Scope 中的账号、评论、点赞、上传、沙箱、通知、后台和 sola 互通。

@@ -119,3 +119,12 @@ test("S8 mobile layout has no horizontal overflow and controls remain usable", a
     expect(box.x + box.width).toBeLessThanOrEqual(375);
   }
 });
+
+test("desktop generator does not create horizontal overflow", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await page.goto("/");
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true);
+  const generator = await page.locator(".generator").boundingBox();
+  expect(generator.x).toBeGreaterThanOrEqual(0);
+  expect(generator.x + generator.width).toBeLessThanOrEqual(1280);
+});

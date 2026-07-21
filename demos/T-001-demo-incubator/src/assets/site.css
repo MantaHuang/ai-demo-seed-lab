@@ -70,7 +70,7 @@ h2 { margin: 0; font-size: 34px; }
 .card-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); }
 .card-actions a { font-size: 13px; font-weight: 800; text-underline-offset: 4px; }
 
-.generator { margin-inline: calc(50% - 50vw); padding: 54px max(16px, calc((100vw - 1180px) / 2)); background: var(--ink); color: white; display: grid; grid-template-columns: minmax(240px, 0.7fr) minmax(420px, 1.3fr); gap: 52px; }
+.generator { width: 100%; padding: 54px 16px; background: var(--ink); color: white; display: grid; grid-template-columns: minmax(240px, 0.7fr) minmax(420px, 1.3fr); gap: 52px; }
 .generator-copy > p:last-child { color: #c8c5bc; line-height: 1.7; }
 .generator-tool { min-height: 230px; }
 .generator-controls { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; }

@@ -36,3 +36,14 @@
 - Changes:
 - Impact:
 - Verification:
+
+## 2026-07-22 - 修复桌面端灵感生成器横向溢出
+
+- Requested by: Claude Code 只读验收 Finding 1，Manta 批准修复
+- Type: Defect
+- Reason: 1280px 桌面视口下 `.generator` 使用 `100vw` 参与全宽计算，未扣除浏览器垂直滚动条宽度，造成约 8px 横向溢出。
+- Spec revision before: 1
+- Spec revision after: 1（缺陷修复，无需修改规格）
+- Changes: `.generator` 改为基于父容器的 `width: 100%`，并新增 1280×800 桌面视口无横向溢出的 Playwright 回归测试。
+- Impact: 消除桌面横向滚动条；不改变功能、数据契约或移动端交互。
+- Verification: `npm run build` 与 `npm run test:unit` 通过；桌面回归断言通过，独立 Chromium DOM 尺寸检查为 `clientWidth=1280`、`scrollWidth=1280`、generator 边界 `8..1272`。
